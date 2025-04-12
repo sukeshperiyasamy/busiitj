@@ -1,0 +1,48 @@
+IIT Jodhpur Campus Bus Schedule
+📅 Monday to Saturday
+Departure from Campus:
+
+Bus B1 departs at 6:30 AM and arrives at 7:40 AM, traveling from IITJ to GPRA via Paota and Railway Station.
+
+Bus B2 also departs at 6:30 AM and reaches Jaljog Circle by 7:40 AM, going through Paota and Riktiya Bheruji Circle.
+
+At 10:00 AM, Bus B1 departs for AIIMS Jodhpur, reaching by 11:00 AM, taking the Paota – MBM – AIIMS route.
+
+Bus B2 leaves at 11:00 AM for MBM and arrives by 12:00 PM, via Paota and Railway Station.
+
+Again at 3:00 PM, Bus B1 goes to AIIMS Jodhpur, reaching by *4:00 PM via Paota – Railway Station.
+
+In the evening, Bus B1 departs at 5:45 PM for GPRA, arriving by *6:45 PM, covering Paota – MBM – Riktiya Bheruji Circle.
+
+Bus B2 starts at 6:15 PM and reaches Jaljog Circle at 7:45 PM, via Paota – MBM – Riktiya Bheruji Circle – MBM.
+
+Arrival at Campus:
+
+Bus B1 arrives at 8:50 AM from GPRA, starting at 7:45 AM, following MBM – Paota – Mandore – IITJ.
+
+Bus B2 also arrives by 8:50 AM from Jaljog Circle, starting at 7:45 AM.
+
+Bus B1 returns from AIIMS Jodhpur at 12:30 PM, departing at 11:30 AM, via MBM College – Paota – Station.
+
+Bus B2 returns from MBM at 4:30 PM, leaving at 3:30 PM.
+
+At 4:15 PM, Bus B1 departs AIIMS Jodhpur and arrives at 5:15 PM via Riktiya Bheruji Circle – MBM – Paota.
+
+Evening return trips include Bus B1 from MBM at 8:30 PM (via Railway Station – Paota) and Bus B2 at 9:00 PM, both reaching IITJ by 9:30 PM and 10:00 PM respectively.
+
+📅 Sunday
+Departure from Campus:
+
+Bus B2 departs at 9:30 AM to MBM, reaching by *10:30 AM, taking Paota – Riktiya Bheruji Circle – MBM.
+
+Bus B1 follows at 10:30 AM, reaching MBM by *11:30 AM, via Paota – MBM.
+
+Evening rides include Bus B1 at 4:45 PM and Bus B2 at 5:45 PM, both heading to MBM via Paota – MBM – Riktiya Bheruji Circle.
+
+Arrival at Campus:
+
+Bus B2 returns from MBM at 11:30 AM, reaching IITJ at 12:30 PM, covering Paota – Mandore – IITJ.
+
+Bus B1 starts at 1:30 PM from MBM, arriving at *2:30 PM, following MBM College – Paota – IITJ.
+
+Evening returns include Bus B1 at 8:30 PM (via Railway Station – Paota) and Bus B2 at 9:00 PM, both reaching campus within an hour.

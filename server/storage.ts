@@ -348,7 +348,8 @@ export class MongoStorage implements IStorage {
       isActive: false,
     });
     
-    // Add weekday schedules
+    // Add weekday schedules (Monday to Saturday)
+    
     // Departures from campus
     await this.createSchedule({
       busId: parseInt(bus1.id.toString()),
@@ -405,6 +406,28 @@ export class MongoStorage implements IStorage {
       isArrival: false,
     });
     
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "weekday",
+      departureTime: "5:45 PM",
+      arrivalTime: "6:45 PM",
+      startLocation: "IITJ",
+      endLocation: "GPRA",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus2.id.toString()),
+      day: "weekday",
+      departureTime: "6:15 PM",
+      arrivalTime: "7:45 PM",
+      startLocation: "IITJ",
+      endLocation: "Jaljog Circle",
+      route: "via Paota – MBM – Riktiya Bheruji Circle – MBM",
+      isArrival: false,
+    });
+    
     // Arrivals at campus
     await this.createSchedule({
       busId: parseInt(bus1.id.toString()),
@@ -413,7 +436,7 @@ export class MongoStorage implements IStorage {
       arrivalTime: "8:50 AM",
       startLocation: "GPRA",
       endLocation: "IITJ",
-      route: "via MBM – Paota – Mandore",
+      route: "via MBM – Paota – Mandore – IITJ",
       isArrival: true,
     });
     
@@ -423,6 +446,61 @@ export class MongoStorage implements IStorage {
       departureTime: "7:45 AM",
       arrivalTime: "8:50 AM",
       startLocation: "Jaljog Circle",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "weekday",
+      departureTime: "11:30 AM",
+      arrivalTime: "12:30 PM",
+      startLocation: "AIIMS Jodhpur",
+      endLocation: "IITJ",
+      route: "via MBM College – Paota – Station",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus2.id.toString()),
+      day: "weekday",
+      departureTime: "3:30 PM",
+      arrivalTime: "4:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "weekday",
+      departureTime: "4:15 PM",
+      arrivalTime: "5:15 PM",
+      startLocation: "AIIMS Jodhpur",
+      endLocation: "IITJ",
+      route: "via Riktiya Bheruji Circle – MBM – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "weekday",
+      departureTime: "8:30 PM",
+      arrivalTime: "9:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via Railway Station – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus2.id.toString()),
+      day: "weekday",
+      departureTime: "9:00 PM",
+      arrivalTime: "10:00 PM",
+      startLocation: "MBM",
       endLocation: "IITJ",
       route: "",
       isArrival: true,
@@ -452,6 +530,28 @@ export class MongoStorage implements IStorage {
       isArrival: false,
     });
     
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "sunday",
+      departureTime: "4:45 PM",
+      arrivalTime: "5:45 PM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus2.id.toString()),
+      day: "sunday",
+      departureTime: "5:45 PM",
+      arrivalTime: "6:45 PM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
     // Arrivals
     await this.createSchedule({
       busId: parseInt(bus2.id.toString()),
@@ -472,6 +572,28 @@ export class MongoStorage implements IStorage {
       startLocation: "MBM",
       endLocation: "IITJ",
       route: "via MBM College – Paota – IITJ",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus1.id.toString()),
+      day: "sunday",
+      departureTime: "8:30 PM",
+      arrivalTime: "9:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via Railway Station – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: parseInt(bus2.id.toString()),
+      day: "sunday",
+      departureTime: "9:00 PM",
+      arrivalTime: "10:00 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "",
       isArrival: true,
     });
   }
@@ -707,7 +829,8 @@ export class MemStorage implements IStorage {
       role: "student",
     });
     
-    // Add weekday schedules
+    // Add weekday schedules (Monday to Saturday)
+
     // Departures from campus
     await this.createSchedule({
       busId: bus1.id,
@@ -731,7 +854,229 @@ export class MemStorage implements IStorage {
       isArrival: false,
     });
     
-    // More schedules would be added here...
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "10:00 AM",
+      arrivalTime: "11:00 AM",
+      startLocation: "IITJ",
+      endLocation: "AIIMS Jodhpur",
+      route: "via Paota – MBM – AIIMS",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "weekday",
+      departureTime: "11:00 AM",
+      arrivalTime: "12:00 PM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota and Railway Station",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "3:00 PM",
+      arrivalTime: "4:00 PM",
+      startLocation: "IITJ",
+      endLocation: "AIIMS Jodhpur",
+      route: "via Paota – Railway Station",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "5:45 PM",
+      arrivalTime: "6:45 PM",
+      startLocation: "IITJ",
+      endLocation: "GPRA",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "weekday",
+      departureTime: "6:15 PM",
+      arrivalTime: "7:45 PM",
+      startLocation: "IITJ",
+      endLocation: "Jaljog Circle",
+      route: "via Paota – MBM – Riktiya Bheruji Circle – MBM",
+      isArrival: false,
+    });
+    
+    // Arrivals at campus
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "7:45 AM",
+      arrivalTime: "8:50 AM",
+      startLocation: "GPRA",
+      endLocation: "IITJ",
+      route: "via MBM – Paota – Mandore – IITJ",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "weekday",
+      departureTime: "7:45 AM",
+      arrivalTime: "8:50 AM",
+      startLocation: "Jaljog Circle",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "11:30 AM",
+      arrivalTime: "12:30 PM",
+      startLocation: "AIIMS Jodhpur",
+      endLocation: "IITJ",
+      route: "via MBM College – Paota – Station",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "weekday",
+      departureTime: "3:30 PM",
+      arrivalTime: "4:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "4:15 PM",
+      arrivalTime: "5:15 PM",
+      startLocation: "AIIMS Jodhpur",
+      endLocation: "IITJ",
+      route: "via Riktiya Bheruji Circle – MBM – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "weekday",
+      departureTime: "8:30 PM",
+      arrivalTime: "9:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via Railway Station – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "weekday",
+      departureTime: "9:00 PM",
+      arrivalTime: "10:00 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
+    
+    // Sunday schedules
+    // Departures
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "sunday",
+      departureTime: "9:30 AM",
+      arrivalTime: "10:30 AM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – Riktiya Bheruji Circle – MBM",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "sunday",
+      departureTime: "10:30 AM",
+      arrivalTime: "11:30 AM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – MBM",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "sunday",
+      departureTime: "4:45 PM",
+      arrivalTime: "5:45 PM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "sunday",
+      departureTime: "5:45 PM",
+      arrivalTime: "6:45 PM",
+      startLocation: "IITJ",
+      endLocation: "MBM",
+      route: "via Paota – MBM – Riktiya Bheruji Circle",
+      isArrival: false,
+    });
+    
+    // Arrivals
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "sunday",
+      departureTime: "11:30 AM",
+      arrivalTime: "12:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via Paota – Mandore – IITJ",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "sunday",
+      departureTime: "1:30 PM",
+      arrivalTime: "2:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via MBM College – Paota – IITJ",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus1.id,
+      day: "sunday",
+      departureTime: "8:30 PM",
+      arrivalTime: "9:30 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "via Railway Station – Paota",
+      isArrival: true,
+    });
+    
+    await this.createSchedule({
+      busId: bus2.id,
+      day: "sunday",
+      departureTime: "9:00 PM",
+      arrivalTime: "10:00 PM",
+      startLocation: "MBM",
+      endLocation: "IITJ",
+      route: "",
+      isArrival: true,
+    });
   }
 }
 
