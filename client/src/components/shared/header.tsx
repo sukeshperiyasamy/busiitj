@@ -2,6 +2,7 @@ import { Link } from "wouter";
 import { useAuth } from "@/lib/auth";
 import { Button } from "@/components/ui/button";
 import { LogOut } from "lucide-react";
+import iitLogo from "@assets/Design of New Logo of IITJ-2 PNG BW.png";
 
 interface HeaderProps {
   title?: string;
@@ -21,9 +22,9 @@ export function Header({ title, showLogout = true, busNumber }: HeaderProps) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
         <div className="flex items-center">
           <img
-            src="https://www.iitj.ac.in/techscape/vol04/images/logo.png"
+            src={iitLogo}
             alt="IIT Jodhpur Logo"
-            className="h-10 mr-3"
+            className="h-10 mr-3 invert"
           />
           <h1 className="text-xl font-bold">IIT Jodhpur Bus Tracker</h1>
         </div>

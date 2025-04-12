@@ -5,6 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { insertUserSchema } from "@shared/schema";
 import { useAuth } from "@/lib/auth";
+import iitLogo from "@assets/Design of New Logo of IITJ-2 PNG BW.png";
 import { 
   Form, 
   FormControl, 
@@ -64,9 +65,9 @@ export default function Register() {
         <CardContent className="pt-6">
           <div className="flex justify-center mb-8">
             <img 
-              src="https://www.iitj.ac.in/techscape/vol04/images/logo.png" 
+              src={iitLogo} 
               alt="IIT Jodhpur Logo" 
-              className="h-16" 
+              className="h-24" 
             />
           </div>
           
