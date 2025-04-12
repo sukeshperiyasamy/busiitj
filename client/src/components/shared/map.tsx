@@ -22,17 +22,29 @@ export function BusMap({ latitude, longitude, isActive = true, busNumber = "B1",
     if (!window.google && !document.getElementById("google-maps-script")) {
       const script = document.createElement("script");
       script.id = "google-maps-script";
-      // Use environment variable for API key
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.GOOGLE_MAPS_API_KEY || ''}&callback=initMap`;
-      script.async = true;
-      script.defer = true;
+      // Use the API key directly from server-side environment
+      // This will be replaced with proper API key on the server side during render
+      fetch('/api/config/maps-key')
+        .then(response => response.json())
+        .then(data => {
+          script.src = `https://maps.googleapis.com/maps/api/js?key=${data.key}&callback=initMap`;
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+        })
+        .catch(error => {
+          console.error('Failed to load Google Maps API key:', error);
+          // Fallback without key if fetch fails
+          script.src = `https://maps.googleapis.com/maps/api/js?callback=initMap`;
+          script.async = true;
+          script.defer = true;
+          document.head.appendChild(script);
+        });
       
       // Define the callback function
       window.initMap = () => {
         setMapLoaded(true);
       };
-      
-      document.head.appendChild(script);
     } else if (window.google) {
       // Google Maps is already loaded
       setMapLoaded(true);

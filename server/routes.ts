@@ -64,6 +64,12 @@ export async function registerRoutes(app: Express): Promise<Server> {
   // Create HTTP server
   const httpServer = createServer(app);
   
+  // Config routes - for frontend environment variables
+  app.get("/api/config/maps-key", (req, res) => {
+    // Return the Google Maps API key from environment variable
+    res.json({ key: process.env.GOOGLE_MAPS_API_KEY || "" });
+  });
+  
   // Authentication routes
   app.post("/api/auth/login", async (req, res) => {
     const { data, error } = validateSchema(loginSchema, req.body);
