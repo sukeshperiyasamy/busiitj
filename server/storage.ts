@@ -651,6 +651,25 @@ export class MemStorage implements IStorage {
       isActive: false,
     });
     
+    // Create driver accounts
+    await this.createUser({
+      name: "Bus 1 Driver",
+      email: "driver1@iitj.ac.in",
+      username: "bus1", 
+      password: "driver1",
+      role: "driver",
+      busId: 1,
+    });
+    
+    await this.createUser({
+      name: "Bus 2 Driver",
+      email: "driver2@iitj.ac.in",
+      username: "bus2",
+      password: "driver2",
+      role: "driver",
+      busId: 2,
+    });
+    
     // Add weekday schedules
     // Departures from campus
     await this.createSchedule({

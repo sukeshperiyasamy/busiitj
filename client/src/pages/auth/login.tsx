@@ -115,10 +115,8 @@ export default function Login() {
               <div className="text-center">
                 <p className="text-neutral-dark">
                   Don't have an account?{" "}
-                  <Link href="/register">
-                    <a className="text-primary hover:text-primary-light">
-                      Sign up
-                    </a>
+                  <Link href="/register" className="text-primary hover:text-primary-light">
+                    Sign up
                   </Link>
                 </p>
               </div>
