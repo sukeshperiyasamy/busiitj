@@ -22,7 +22,8 @@ export function BusMap({ latitude, longitude, isActive = true, busNumber = "B1",
     if (!window.google && !document.getElementById("google-maps-script")) {
       const script = document.createElement("script");
       script.id = "google-maps-script";
-      script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyBNLrJhOMz6idD05pzwk17mcMkWv7r4A-M&callback=initMap`;
+      // Use environment variable for API key
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.GOOGLE_MAPS_API_KEY || ''}&callback=initMap`;
       script.async = true;
       script.defer = true;
       

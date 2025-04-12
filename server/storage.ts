@@ -670,6 +670,15 @@ export class MemStorage implements IStorage {
       busId: 2,
     });
     
+    // Create student account
+    await this.createUser({
+      name: "Student User",
+      email: "student@iitj.ac.in",
+      username: "student",
+      password: "student123",
+      role: "student",
+    });
+    
     // Add weekday schedules
     // Departures from campus
     await this.createSchedule({
