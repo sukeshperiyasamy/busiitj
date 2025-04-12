@@ -15,7 +15,7 @@ import {
 } from "@shared/schema";
 
 // MongoDB setup
-const uri = process.env.MONGODB_URI || "mongodb+srv://m24im1007:Sukesh9595@@busapp.2iugnw6.mongodb.net/?retryWrites=true&w=majority&appName=busapp";
+const uri = process.env.MONGODB_URI || "mongodb+srv://m24im1007:Sukesh9595@busapp.2iugnw6.mongodb.net/?retryWrites=true&w=majority&appName=busapp";
 let client: MongoClient | null = null;
 
 async function connectToMongo() {
@@ -307,6 +307,34 @@ export class MongoStorage implements IStorage {
       username: "admin",
       password: "admin123", // In production, use proper password hashing
       role: "admin",
+    });
+    
+    // Create driver accounts
+    await this.createUser({
+      name: "Bus 1 Driver",
+      email: "driver1@iitj.ac.in",
+      username: "bus1", 
+      password: "driver1",
+      role: "driver",
+      busId: 1,
+    });
+    
+    await this.createUser({
+      name: "Bus 2 Driver",
+      email: "driver2@iitj.ac.in",
+      username: "bus2",
+      password: "driver2",
+      role: "driver",
+      busId: 2,
+    });
+    
+    // Create student account
+    await this.createUser({
+      name: "Student User",
+      email: "student@iitj.ac.in",
+      username: "student",
+      password: "student123",
+      role: "student",
     });
     
     // Create buses
@@ -707,10 +735,8 @@ export class MemStorage implements IStorage {
   }
 }
 
-// Decide which storage to use
-export const storage = process.env.NODE_ENV === "production" 
-  ? new MongoStorage() 
-  : new MemStorage();
+// Use in-memory storage until MongoDB is properly configured
+export const storage = new MemStorage();
 
 // Seed initial data on startup
 storage.seedInitialData().catch(console.error);
