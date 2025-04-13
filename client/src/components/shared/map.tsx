@@ -152,21 +152,21 @@ export function BusMap({ latitude, longitude, isActive = true, busNumber = "B1",
 
   return (
     <Card className={className}>
-      <CardContent className="p-0 overflow-hidden rounded-lg h-[400px] relative">
-        {!mapLoaded && (
-          <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
-            <div className="text-center">
-              <Skeleton className="h-[400px] w-full" />
-            </div>
+    <CardContent className="p-0 overflow-hidden rounded-lg h-[400px] relative">
+      {!mapLoaded && (
+        <div className="absolute inset-0 flex items-center justify-center bg-gray-100">
+          <div className="text-center">
+            <Skeleton className="h-[400px] w-full" />
           </div>
-        )}
-        <div ref={mapContainerRef} className="h-full w-full" />
-        {!isActive && (
-          <div className="absolute bottom-0 left-0 right-0 bg-red-500 bg-opacity-75 text-white text-sm p-2 text-center">
-            This bus is currently inactive
-          </div>
-        )}
-      </CardContent>
-    </Card>
+        </div>
+      )}
+      <div ref={mapContainerRef} className="h-full w-full" />
+      {!isActive && (
+        <div className="absolute bottom-0 left-0 right-0 bg-red-500 bg-opacity-75 text-white text-sm p-2 text-center">
+          This bus is currently inactive
+        </div>
+      )}
+    </CardContent>
+  </Card>
   );
 }
